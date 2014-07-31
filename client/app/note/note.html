@@ -8,4 +8,15 @@
     <div class="col-md-12">
     This is the note view and {{message}}
     </div>
+
+    <div class="col-md-12">
+    <ul ng-repeat = "note in notes">
+        <li>
+          <a href="showNote/{{note._id}}">{{note.name}}</a>
+          <button class="btn btn-danger btn-xs" ng-click="deleteNote(note)">
+              <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </li>
+    </ul> 
+    </div>
 </div>

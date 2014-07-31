@@ -12,6 +12,7 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  dateJoined: {type: Date, default: Date.now},
   hashedPassword: String,
   provider: String,
   salt: String,

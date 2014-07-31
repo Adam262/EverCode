@@ -22,6 +22,10 @@ angular.module('evercodeApp')
       $http.delete('/api/notes/' + note._id);
     };
 
+    $scope.editNote = function(note) {
+      $http.put('/api/notes/' + note._id);
+    };
+
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('note');
     });

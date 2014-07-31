@@ -1,7 +1,16 @@
 'use strict';
 
 angular.module('evercodeApp')
-  .controller('DropdownCtrl', function ($scope, $location, Auth) {
+  .controller('DropdownCtrl', function ($scope, $http, $location, socket, Auth) {
+  
+  //for dynamically generating buttons from db.notebooks. missing step is assigning link + button color on creation. 
+    $scope.notebooks = [];
+      $http.get('/api/notebooks').success(function(notebooks) {
+        $scope.notebooks = notebooks;
+      console.log("notebooks: ", notebooks);
+        socket.syncUpdates('notebook', $scope.notebooks);
+    });
+
     $scope.dropdownArray = [
     {
       'title': 'Javascript',

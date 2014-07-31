@@ -16,14 +16,35 @@
       </div>
     </div>
     <div class = "col-lg-2 col-md-2">
-         <a class="btn btn-primary pull-right" type="button" ng-href = "#" >
-            Notebook  <span class="glyphicon glyphicon-plus"></span>
+         <a class="btn btn-primary pull-right" type="button" ng-href = "#" ng-click = 
+         "showNoteBookForm = !showNoteBookForm">
+            Notebook   <span class="glyphicon glyphicon-plus"></span>
           </a>
      </div>
      <div class = "col-lg-2 col-md-2">
-          <input class="btn btn-default pull-right" placeholder = "search" >
-      </div>
+          <a class="btn btn-danger pull-left" href = "/note">
+            Note   <span class="glyphicon glyphicon-file"></span>
+          </a>
+    </div>
+    <div ng-show = "showNoteBookForm" ng-controller="NotebookcreateCtrl">
+        <center class = 'navbar note'>
+            <form class = "form-inline center-block" name = "noteBookCreateForm" ng-submit = "noteBookCreateForm.$valid && addNoteBook()" novalidate>
+                  <div class="form-group">
+                      <small>CREATE NOTEBOOK</small>
+                      <input type='text' ng-model='notebook.name' name='notebook.name' class='form-control' placeholder="notebook name" validation-no-special-chars="true" required>
+                  </div>
+                  <div class="form-group">
+                      <small>DESCRIPTION</small>
+                      <input type='text' ng-model='notebook.description' name='notebook.description' class='form-control' placeholder="description">
+                  </div>
+                      <small>NOTEBOOK</small>
+                  <button class='btn btn-primary' type='submit'>
+                      <span class="glyphicon glyphicon-send"></span>
+                  </button>
+              </form>
+        </center>
+    </div>
   </div>
 </div>
 
-
+<!-- ng-include="'client/app/main/notebookCreate/notebookCreate.html'" -->

@@ -24,6 +24,11 @@ body{
     margin: 20px 0;
 }
 
+ul, li {
+    list-style-type: none;
+    display: inline;
+}
+
 #banner {
     border-bottom: none;
     margin-top: -20px;
