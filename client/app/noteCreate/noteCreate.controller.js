@@ -10,10 +10,11 @@ angular.module('evercodeApp')
     });
 
     $scope.addNote = function() {
-      if($scope.newNote === '') {
+      if($scope.note === '') {
         return;
       }
-      $http.post('/api/notes', { name: $scope.newNote.name, url:$scope.newNote.url});
+      $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, description:$scope.note.description, notebook: $scope.note.notebook});
+       console.log("noteForHTTPPost: ",$scope.note)
       $scope.newNote = {};
     };
 

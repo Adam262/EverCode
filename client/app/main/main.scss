@@ -1,3 +1,25 @@
+//GLOBAL
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+//NAVBAR  + DROPDOWN
+.navbar {
+    font-family: "Montserrat", Helvetica, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.navbar-text {
+    margin-top: 1%;
+}
+
+// .dropdown {
+//     background-color: #cff7f2;
+// }
+
+// BODY
+body{
+    font-family: "Raleway", Helvetica, sans-serif;
+}
 .thing-form {
     margin: 20px 0;
 }
@@ -21,7 +43,7 @@
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
     background: #4393B9;
 }
-
+//FOOTER
 .footer {
     text-align: center;
     padding: 30px 0;

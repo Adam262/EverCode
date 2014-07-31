@@ -7,10 +7,13 @@ var mongoose = require('mongoose'),
 var NoteSchema = new Schema({
   name: String,
   url: String,
+  type: String,
   description: String,
-  category: String,
-  difficulty: Number,
+  tag: Array,
+  comment: Array,
+  rating: Number,
   notebook: [NotebookSchema],
+  favorite: Boolean,
   active: Boolean
 });
 

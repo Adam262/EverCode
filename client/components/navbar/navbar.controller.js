@@ -4,13 +4,16 @@ angular.module('evercodeApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
     {
-      'title': 'Home',
+      'title': 'note_ify',
+      'subtitle': 'catchy slogan', 
       'link': '/'
-    }, 
-      {
-      'title': 'test',
-      'link': '/'
-    }];
+    }
+    // , 
+    //   {
+    //   'title': 'test',
+    //   'link': '/'
+    // }
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

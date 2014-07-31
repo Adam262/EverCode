@@ -1,3 +1,11 @@
-<div class="col-md-12">
-This is the note view and {{message}}
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/dropdown/dropdown.html'"></div>
+<br>
+<br>
+<div ng-include="'app/noteCreate/noteCreate.html'"></div>
+
+<div ng-controller="NoteCtrl">
+    <div class="col-md-12">
+    This is the note view and {{message}}
+    </div>
 </div>
