@@ -14,12 +14,10 @@ var NoteSchema = new Schema({
   dateAdded: {type: Date, default: Date.now},
   dateEdited: {type: Date, default: Date.now},
   active: {type: Boolean, default: true},
-  meta: {
       tags: {type: [String], index: true},
       comment: {type: [String], index: true, date: Date},
       rating: Number,
       favorite: {type: Boolean, default: false}
-    }
 });
 
 module.exports = mongoose.model('Note', NoteSchema);

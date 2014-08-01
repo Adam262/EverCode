@@ -13,7 +13,7 @@ angular.module('evercodeApp')
       if($scope.note === '') {
         return;
       }
-      $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, description:$scope.note.description, notebook: $scope.note.notebook});
+      $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, description:$scope.note.description, comment:$scope.note.comment, notebook: $scope.note.notebook});
        console.log("noteForHTTPPost: ",$scope.note)
       $scope.newNote = {};
     };
