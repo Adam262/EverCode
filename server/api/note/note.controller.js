@@ -22,7 +22,19 @@ exports.show = function(req, res) {
 
 // Creates a new note in the DB.
 exports.create = function(req, res) {
-  Note.create(req.body, function(err, note) {
+  var name = req.body.name;
+  var url = req.body.url;
+  var description = req.body.description;
+  var newComment = req.body.comment;
+  console.log("NoteSchema:", Note.comment);
+
+  Note.create({
+      name: name, 
+      url: url, 
+      description: description,
+      comment: newComment
+    }, function(err, note) {
+    console.log("req.body: ", name, url, description, newComment);
     if(err) { return handleError(res, err); }
     return res.json(201, note);
   });
@@ -30,6 +42,7 @@ exports.create = function(req, res) {
 
 // Updates an existing note in the DB.
 exports.update = function(req, res) {
+  console.log(req.body);
   if(req.body._id) { delete req.body._id; }
   Note.findById(req.params.id, function (err, note) {
     if (err) { return handleError(res, err); }
