@@ -9,10 +9,12 @@ angular.module('evercodeApp')
       socket.syncUpdates('note', $scope.notes);
     });
 
-    $scope.addNote = function() {
+    $scope.addNote = function(noteParam) {
       if($scope.note === '') {
         return;
       }
+      console.log("scope.note: ", $scope.note)
+      // $scope.note.notebooks.push($scope.note.tempNotebook);
       $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, description:$scope.note.description, comment:$scope.note.comment, notebook: $scope.note.notebook});
        console.log("noteForHTTPPost: ",$scope.note)
       $scope.note = {};

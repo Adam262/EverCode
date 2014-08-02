@@ -18,6 +18,6 @@ var NotebookSchema = new Schema({
   link: String,
   active: {type: Boolean, default: true}
 });
-
+console.log("NotebookSchema: ", NotebookSchema);
 module.exports = mongoose.model('Notebook', NotebookSchema);
 console.log("NoteSchema: ", module.exports.base.modelSchemas.Note);

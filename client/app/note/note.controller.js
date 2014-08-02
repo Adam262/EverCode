@@ -34,10 +34,12 @@ angular.module('evercodeApp')
 
       $scope.voteUp = function(note) {
         note.rating++;
+        note.active = !note.active;
       }
 
       $scope.voteDown = function(note) {
         note.rating>0?note.rating--:note.rating=note.rating;
+        note.active = !note.active;
       }
     });
     })

@@ -37,7 +37,7 @@ angular.module('evercodeApp')
                      'link': '/cli'
                    },
                        {
-                    'title': 'Databases',
+                    'title': 'Database',
                      'sublinks': ["SQL", "NOSQL", "Firebase"],
                      'btn' : 'warning',
                      'link': '/db'

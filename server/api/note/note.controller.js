@@ -26,13 +26,16 @@ exports.create = function(req, res) {
   var url = req.body.url;
   var description = req.body.description;
   var newComment = req.body.comment;
-  console.log("NoteSchema:", Note.comment);
+  var notebook = req.body.notebook;
+  
 
   Note.create({
       name: name, 
       url: url, 
       description: description,
-      comment: newComment
+      comment: newComment,
+      notebook: notebook
+      // notebook: notebook.name
     }, function(err, note) {
     console.log("req.body: ", name, url, description, newComment);
     if(err) { return handleError(res, err); }
