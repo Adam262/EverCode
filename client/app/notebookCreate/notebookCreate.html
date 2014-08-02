@@ -10,7 +10,7 @@
               <input type='text' ng-model='notebook.description' name='notebook.description' class='form-control' placeholder="description">
           </div>
               <small>NOTEBOOK</small>
-          <button class='btn btn-primary' type='submit' >
+          <button class='btn btn-primary' type='submit' ng-disabled="noteBookCreateForm.$invalid">
                         <span class="glyphicon glyphicon-send"></span>
           </button>
       </form>

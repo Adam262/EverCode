@@ -24,20 +24,19 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   var name = req.body.name;
   var url = req.body.url;
-  var description = req.body.description;
-  var newComment = req.body.comment;
+  var tags = req.body.tags;
+  var comments = req.body.comments;
   var notebook = req.body.notebook;
   
 
   Note.create({
       name: name, 
       url: url, 
-      description: description,
-      comment: newComment,
+      tags: tags,
+      comments: comments,
       notebook: notebook
       // notebook: notebook.name
     }, function(err, note) {
-    console.log("req.body: ", name, url, description, newComment);
     if(err) { return handleError(res, err); }
     return res.json(201, note);
   });
@@ -45,15 +44,20 @@ exports.create = function(req, res) {
 
 // Updates an existing note in the DB.
 exports.update = function(req, res) {
-  console.log(req.body);
+  console.log("req.body: ", req.body);
   if(req.body._id) { delete req.body._id; }
   Note.findById(req.params.id, function (err, note) {
     if (err) { return handleError(res, err); }
     if(!note) { return res.send(404); }
     var updated = _.merge(note, req.body);
+    console.log("updated: ", updated);
+    updated.markModified('tags');
+    updated.markModified('comments');
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
+       console.log("note:", note)
       return res.json(200, note);
+
     });
   });
 };

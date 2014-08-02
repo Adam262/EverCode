@@ -10,7 +10,7 @@
        This is the note view and {{message}}
       </div>
           <div >
-              <ul ng-repeat = "note in notes" class="nav nav-tabs nav-stacked col-md-4 col-sm-6">
+              <ul ng-repeat = "note in notes" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6">
                   <li>
                     <a>{{note.name}}
                         <button class="btn btn-primary btn-xs" ng-click="showNote = !showNote">

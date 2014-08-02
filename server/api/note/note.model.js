@@ -19,7 +19,7 @@ var NoteSchema = new Schema({
   tags: [{type: String}],
   comments: [{type: String}],
   rating: {type: Number, default: 0},
-  myCurriculum: {type: Boolean, default: false} 
+  favorite: {type: Boolean, default: false} 
 
 });
 

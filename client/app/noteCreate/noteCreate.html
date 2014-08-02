@@ -2,33 +2,38 @@
   <center class = 'navbar note'>
       <form class = "form-inline center-block" name = "noteCreateForm" ng-submit = "noteCreateForm.$valid && addNote()" novalidate>
           <div class="form-group">
-              <small>CREATE NOTE</small>
-              <input type='text' ng-model='note.name' name='note.name' class='form-control' placeholder="note name" validation-no-special-chars="true" required>
+              <small>NEW NOTE</small>
+              <input type='text' ng-model='note.name' name='name' class='form-control' placeholder="note name" validation-no-special-chars="true" required>
           </div>
           <div class="form-group">
               <small>URL</small>
-              <input type='url' ng-model='note.url' name='note.url' class='form-control' placeholder="url" required>
+              <input type='url' ng-model='note.url' name='url' class='form-control' placeholder="http://" required>
           </div>
-           <div class="form-group">
-              <small>DESCRIPTION</small>
-              <input type='text' ng-model='note.description' name='note.description' class='form-control' placeholder="description">
-          </div>
-
-           <div class="form-group">
+          <div class="form-group">
               <small>COMMENT</small>
-              <input type='text' ng-model='note.comment' name='note.comment'{{$index}} class='form-control' placeholder="first comment">
-
+              <input type='text' ng-model='note.comments' name='comment' class='form-control' placeholder="first comment">
+           </div>
+           <div class="form-group">
+              <small>TAG</small>
+              <input type='text' ng-model='note.tags' name='tag' class='form-control' placeholder="first tag">
+          </div>
+          <div ng-controller = "DropdownCtrl" class = "form-group pull-right">
               <small>NOTEBOOK</small>
-          <select class="form-group form-control" ng-model = 'note.notebook'>
-                  <option>Javascript</option> 
-                  <option>HTML/CSS</option> 
-                  <option>Backend</option>
-                  <option>Command Line</option> 
-                  <option>Database</option>  
-          </select>
-          <button class='btn btn-primary' type='submit' >
+              <select class="form-control" ng-model = 'note.notebook' ng-options = "notebook.name for notebook in notebooks" required>
+                    <!--   <option>Javascript Fundamentals</option> 
+                      <option>Javascript Frameworks</option> 
+                      <option>HTML + CSS</option> 
+                      <option>Backend</option>
+                      <option>Command Line</option> 
+                      <option>Database</option> 
+                      <option>Data Visualization</option> 
+                      <option>Testing + Deployment</option>  -->     
+              </select>
+         
+              <button class='btn btn-primary pull-right' type='submit' ng-disabled="noteCreateForm.$invalid">
                         <span class="glyphicon glyphicon-send"></span>
-          </button>
+              </button>
+           </div>
       </form>
   </center>
 </div>

@@ -15,7 +15,7 @@ angular.module('evercodeApp')
       }
       console.log("scope.note: ", $scope.note)
       // $scope.note.notebooks.push($scope.note.tempNotebook);
-      $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, description:$scope.note.description, comment:$scope.note.comment, notebook: $scope.note.notebook});
+      $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, comments:$scope.note.comments, tags:$scope.note.tags, notebook: $scope.note.notebook.name});
        console.log("noteForHTTPPost: ",$scope.note)
       $scope.note = {};
     };
