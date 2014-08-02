@@ -4,19 +4,65 @@
 <br>
 <div ng-include="'app/noteCreate/noteCreate.html'"></div>
 
-<div ng-controller="NoteCtrl">
-    <div class="col-md-12">
-    This is the note view and {{message}}
-    </div>
+<div class="container" ng-controller="NoteCtrl">
+  <div class="row">
+      <div class = 'col-md-12'>
+       This is the note view and {{message}}
+      </div>
+          <div >
+              <ul ng-repeat = "note in notes" class="nav nav-tabs nav-stacked col-md-4 col-sm-6">
+                  <li>
+                    <a>{{note.name}}
+                        <button class="btn btn-primary btn-xs" ng-click="showNote = !showNote">
+                            <span class="glyphicon glyphicon-resize-full"></span>
+                        </button>
+                        <button class="btn btn-danger btn-xs" ng-click="deleteNote(note)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                        <span class = "pull.right">{{note.notebook}}</span>
+                    </a>
+                  </li>
 
-    <div class="col-md-12">
-    <ul ng-repeat = "note in notes">
-        <li>
-          <a href="showNote/{{note._id}}">{{note.name}}</a>
-          <button class="btn btn-danger btn-xs" ng-click="deleteNote(note)">
-              <span class="glyphicon glyphicon-remove"></span>
-          </button>
-        </li>
-    </ul> 
+  <div class="col-md-12 thumbnail" ng-show = "showNote">
+      <form name = 'noteEditForm' novalidate>
+        <h3 class = "text-center">{{note.name}}</h3>
+            <a href="{{note.url}}" class = "text-center">
+                  <h2>{{note.url}}</h2>
+            </a>
+        
+              <p class = 'text-center'>{{note.description}}</p>
+        
+        <h4 ng-click = "note.favorite=!note.favorite">FAVORITE:{{note.favorite}}
+              <span ng-show = "note.favorite" class = "glyphicon glyphicon-star"></span>
+              <span ng-show = "!note.favorite" class = "glyphicon glyphicon-star-empty"></span>
+        </h4>
+        
+        <h4>LIKES: <strong> {{note.rating}} </strong>
+            <button class="btn btn-primary btn-xs" ng-click="voteUp(note)">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+            <button class="btn btn-danger btn-xs" ng-click="voteDown(note)">
+                <span class="glyphicon glyphicon-minus"></span>
+            </button>
+        </h4>
+
+        <div>
+            <h4>TAGS: {{note.tags}}</h4>
+            <input type="text" placeholder="add a tag" ng-model="note.tempTag">
+        </div>
+
+         <div>
+            <h4>COMMENTS: {{note.comments}}</h4>
+            <input type="text" placeholder="add a tag" ng-model="note.tempComment">
+        </div>
+        </form>
+        <button class='btn btn-primary btn-xs' type='submit' ng-click = "editNote(note)">
+              <span class="glyphicon glyphicon-send"></span>
+        </button>
+      </form>
+  </div> <!-- shownote -->
+              </ul> 
+              
+          </div>
     </div>
 </div>

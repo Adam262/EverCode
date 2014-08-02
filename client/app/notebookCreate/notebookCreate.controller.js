@@ -19,7 +19,7 @@ angular.module('evercodeApp')
           $location.path('/');
       });
        console.log("noteForHTTPPost: ",$scope.notebook)
-      $scope.newNote = {};
+      $scope.notebook = {};
     };
 
     $scope.deleteNoteBook = function(note) {

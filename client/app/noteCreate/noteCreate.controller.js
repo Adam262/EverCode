@@ -15,7 +15,7 @@ angular.module('evercodeApp')
       }
       $http.post('/api/notes', { name: $scope.note.name, url:$scope.note.url, description:$scope.note.description, comment:$scope.note.comment, notebook: $scope.note.notebook});
        console.log("noteForHTTPPost: ",$scope.note)
-      $scope.newNote = {};
+      $scope.note = {};
     };
 
     $scope.deleteNote = function(note) {

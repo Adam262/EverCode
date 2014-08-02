@@ -1,6 +1,6 @@
 'use strict';
 
 angular.module('evercodeApp')
-  .controller('ShownoteCtrl', function ($scope, $http, $routeParams) {
+  .controller('ShownoteCtrl', function ($scope, $http, NoteCtrl) {
     
   });
