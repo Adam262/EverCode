@@ -3,17 +3,17 @@
   <div class="row dropdown">
     <div class="col-lg-8 col-md-8">
       <div class="btn-group pull-left" ng-controller="DropdownCtrl">
-          <a class="btn btn-{{item.btn}} dropdown-toggle" type="button" data-toggle="dropdown" ng-repeat="item in dropdownArray" ng-href = "{{item.link}}"ng-class="{active: isActive(item.link)}">
-            {{item.title}}
-            <span class="caret"></span>
+          <a class="btn btn-{{item.btn}}" type="button"ng-repeat="item in notebooks" ng-href = "{{item.link}}"ng-class="{active: isActive(item.link)}">
+            {{item.name}}
+            <!-- <span class="caret"></span> -->
           </a>
-          <div>
+         <!--  <div>
               <ul class="dropdown-menu" role="menu" >
                   <li ng-repeat="sublink in item.sublinks">
                         <a ng-href="#">{{sublink}}/a>
                   </li>
               </ul>
-          </div>
+          </div> -->
       </div>
     </div>
     <div class = "col-lg-2 col-md-2">
@@ -22,11 +22,11 @@
             Notebook   <span class="glyphicon glyphicon-plus"></span>
           </a>
      </div>
-     <div class = "col-lg-2 col-md-2">
+ <!--     <div class = "col-lg-2 col-md-2">
           <a class="btn btn-danger pull-left" href = "/note">
             Notes   <span class="glyphicon glyphicon-file"></span>
           </a>
-    </div>
+    </div> -->
     <div ng-show = "showNoteBookForm" ng-controller="NotebookcreateCtrl">
         <center class = 'navbar note'>
             <form class = "form-inline center-block" name = "noteBookCreateForm" ng-submit = "noteBookCreateForm.$valid && addNoteBook() && !showNoteBookForm" novalidate>
@@ -38,7 +38,10 @@
                       <small>DESCRIPTION</small>
                       <input type='text' ng-model='notebook.description' name='notebook.description' class='form-control' placeholder="description">
                   </div>
-                      <small>NOTEBOOK</small>
+                     <div class="form-group">
+                      <small>MAKE PRIVATE</small>
+                      <input type='checkbox' ng-model='notebook.isPrivate' name='notebook.private' class='form-control'>
+                  </div>
                   <button class='btn btn-primary' type='submit'>
                       <span class="glyphicon glyphicon-send"></span>
                   </button>

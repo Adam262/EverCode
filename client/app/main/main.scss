@@ -8,11 +8,19 @@
     font-family: "Montserrat", Helvetica, sans-serif;
     background-color: #f8f8f8;
 }
-
+.row.navbar-note {
+    margin-bottom: 2%;
+}
 .navbar-text {
     margin-top: 1%;
 }
+#search {
 
+border: groove 0.5em #ddd;  
+border-radius: 0.5em;
+margin-left: 5%;
+
+}
 // .dropdown {
 //     background-color: #cff7f2;
 // }
@@ -31,6 +39,10 @@ body{
 }
 .thing-form {
     margin: 20px 0;
+}
+
+.dropdown.pull-right {
+    display: inline;
 }
 
 ul, li {

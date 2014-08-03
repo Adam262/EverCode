@@ -32,15 +32,39 @@ angular.module('evercodeApp')
       });
     };
 
-      $scope.voteUp = function(note) {
+    $scope.voteUp = function(note) {
         note.rating++;
         note.active = !note.active;
       }
 
-      $scope.voteDown = function(note) {
+    $scope.voteDown = function(note) {
         note.rating>0?note.rating--:note.rating=note.rating;
         note.active = !note.active;
       }
+    //search funcionality
+    $scope.searchButtons =
+      [
+        {name: "alpha", orderBy: 'name', btn: "primary", glyph: "sort-by-alphabet"},
+        {name: "likes", orderBy: '-rating', btn: "danger", glyph: "thumbs-up"},
+        {name: "newest", orderBy: 'dateEdited', btn: "info", glyph: "calendar"},
+        {name: "favorites", orderBy: '-favorite', btn: "warning", glyph: "star"}
+      ];
+    $scope.setOrder = function(order) {
+      $scope.order = order;
+    }
+    // $scope.searchButtons.forEach(function (el){
+    //     return el.orderBy;
+    // })
+
+    // $scope.myOrder = $scope.searchButtons.forEach(function (el){
+    //     return el.orderBy;
+    // })
+      
+
+    $scope.isFav = function(note) {
+      return note.favorite?true:false; 
+    };
+
     });
     })
   });

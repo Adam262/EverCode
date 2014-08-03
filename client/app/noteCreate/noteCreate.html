@@ -1,10 +1,15 @@
 <div ng-controller="NotecreateCtrl">
+
   <center class = 'navbar note'>
+      <h3>CREATE A NOTE</h3>
       <form class = "form-inline center-block" name = "noteCreateForm" ng-submit = "noteCreateForm.$valid && addNote()" novalidate>
           <div class="form-group">
               <small>NEW NOTE</small>
-              <input type='text' ng-model='note.name' name='name' class='form-control' placeholder="note name" validation-no-special-chars="true" required>
+              <input type='text' ng-model='note.name' name='name' class='form-control' placeholder="note name" ng-maxlength="15" required>
           </div>
+              <span class="error" ng-show="noteCreateForm.name.$error.maxlength">
+                  Please limit name to 15 characters!
+              </span>
           <div class="form-group">
               <small>URL</small>
               <input type='url' ng-model='note.url' name='url' class='form-control' placeholder="http://" required>

@@ -14,6 +14,7 @@ var NotebookSchema = new Schema({
   parent: {type: ObjectId, default: null},
   note: {type: ObjectId, default: null},
   author: ObjectId,
+  isPrivate: {type: Boolean, default: false},
   btn: String,
   link: String,
   active: {type: Boolean, default: true}

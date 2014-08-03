@@ -1,0 +1,13 @@
+<div ng-controller = "NoteCtrl" class = "container">
+  <div class="row navbar-note">
+      <div class="col-lg-12 col-md-12">
+      <div class="btn-group pull-left">
+          <a class="btn btn-primary" type="button" ng-repeat="button in searchButtons" ng-href = ""ng-class="{active: isActive(item.link)}">
+            {{button.name}}
+            <span class="glyphicon glyphicon-{{button.glyph}}"> </span>
+          </a>
+      </div>
+      <input id = "search" ng-model = "filterTerm" placeholder = "search notes">
+    </div>
+  </div>
+</div>
