@@ -1,0 +1,12 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/dropdown/dropdown.html'"></div>
+<br>
+<br>
+<div ng-controller="UsersCtrl">
+  <div ui-view>
+    <ul>
+      <li>{{currentUser|json}}</li>
+    </ul>
+
+  </div>
+</div>

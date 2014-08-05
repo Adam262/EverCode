@@ -22,7 +22,20 @@ exports.show = function(req, res) {
 
 // Creates a new notebook in the DB.
 exports.create = function(req, res) {
-  Notebook.create(req.body, function(err, notebook) {
+  var name = req.body.name;
+  var description = req.body.description;
+  var isPrivate = req.body.isPrivate;
+  var author = {
+        id: req.body.author._id,
+        name: req.body.author.name
+      };
+
+  Notebook.create({
+  name: name,
+  description: description,
+  isPrivate: isPrivate,
+  author: author
+  }, function(err, notebook) {
     if(err) { return handleError(res, err); }
     return res.json(201, notebook);
   });

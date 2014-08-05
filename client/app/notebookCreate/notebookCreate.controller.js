@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('evercodeApp')
-  .controller('NotebookcreateCtrl', function ($scope, $http, $rootScope, $location, socket) {
+  .controller('NotebookcreateCtrl', function ($scope, $http, $rootScope, $location, socket, Auth) {
     $scope.notebooks = [];
+    $scope.currentUser = Auth.getCurrentUser(); 
+    console.log($scope.currentUser);
 
     $http.get('/api/notebooks').success(function(notebooks) {
       $scope.notebooks = notebooks;
@@ -23,8 +25,8 @@ angular.module('evercodeApp')
       }
       $scope.notebook.btn = getRandom(colors);
       $scope.notebook.link = "/" + $scope.notebook.name;
-            
-      $http.post('/api/notebooks', { name: $scope.notebook.name, description: $scope.notebook.description, isPrivate: $scope.notebook.isPrivate, btn:$scope.notebook.btn, link:$scope.notebook.link}).success(function(){
+       
+      $http.post('/api/notebooks', { name: $scope.notebook.name, description: $scope.notebook.description, isPrivate: $scope.notebook.isPrivate, author: $scope.currentUser, btn:$scope.notebook.btn, link:$scope.notebook.link}).success(function(){
           $location.path('/main'); 
       });
        console.log("noteForHTTPPost: ",$scope.notebook)

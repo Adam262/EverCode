@@ -13,7 +13,7 @@ var NotebookSchema = new Schema({
   dateEdited: {type: Date, default: Date.now},
   parent: {type: ObjectId, default: null},
   note: {type: ObjectId, default: null},
-  author: ObjectId,
+  author: {id: ObjectId, name: String},
   isPrivate: {type: Boolean, default: false},
   btn: String,
   link: String,
