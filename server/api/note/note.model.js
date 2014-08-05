@@ -2,8 +2,9 @@
 
 var mongoose = require('mongoose');
 // console.log("NotebookSchema: ", mongoose.model('Notebook') )
-var  NotebookSchema = mongoose.model('Notebook');
-     console.log("NotebookSchema: ", NotebookSchema);
+var  NotebookSchema = mongoose.model('Notebook'),
+    UserSchema = mongoose.model('User');
+     // console.log("UserSchema: ", UserSchema);
      var Schema = mongoose.Schema,
      ObjectId = Schema.Types.ObjectId;
 
@@ -12,9 +13,10 @@ var NoteSchema = new Schema({
   name: String,
   url: String,
   description: String,
-  notebook: String,
+  notebook: {id: ObjectId, name: String},
   dateAdded: {type: Date, default: Date.now},
   dateEdited: {type: Date, default: Date.now},
+  author: {id: ObjectId, name: String},
   active: {type: Boolean, default: true},
   tags: [{type: String}],
   comments: [{type: String}],

@@ -5,7 +5,7 @@
 <div ng-include="'app/noteCreate/noteCreate.html'"></div>
 
 
-<div class="container" ng-controller="NoteCtrl">  
+<div class="container" id = "meny" ng-controller="NoteCtrl">  
 <div class = "row"> 
   <div class="row navbar-note">
       <div class="col-lg-12 col-md-12">
@@ -20,7 +20,7 @@
   </div>
 <!-- orderBy: {{button.orderBy}} -->
    
-        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6">
+        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6 animate" id = "contents">
             <li>
                 <a><strong>{{note.name}}</strong>
                     <button class="btn btn-primary btn-xs" ng-click="showNote = !showNote">
@@ -36,7 +36,7 @@
                     
                     <span ng-show="note.rating" class="glyphicon glyphicon-thumbs-up">{{note.rating}}</span>
                     
-                    <span class = "pull-right glyphicon glyphicon-book">{{note.notebook}}</span>
+                    <span class = "pull-right glyphicon glyphicon-book">{{note.notebook.name}}</span>
                 </a>
             </li>
 
@@ -46,7 +46,7 @@
                     <a href="{{note.url}}" class="text-center">
                         <h2>{{note.url}}</h2>
                     </a>
-
+                    <p class='text-center'>AUTHOR: {{note.author.name}}</p>
                     <p class='text-center'>{{note.description}}</p>
 
                     <h4 ng-click="note.favorite=!note.favorite">FAVORITE
@@ -65,12 +65,21 @@
                     </h4>
 
                     <div>
-                        <h4>TAGS: {{note.tags}}</h4>
+                        <ul><h4>TAGS:</h4>
+                            <li ng-repeat = "tag in note.tags">
+                                {{tag}}<br>
+                            </li>
+                        </ul>
+                        
                         <input type="text" placeholder="add a tag" ng-model="note.tempTag">
                     </div>
 
                     <div>
-                        <h4>COMMENTS: {{note.comments}}</h4>
+                        <ul><h4>COMMENTS:</h4>
+                            <li ng-repeat = "comment in note.comments">
+                                {{comment}}<br>
+                            </li>
+                        </ul>
                         <input type="text" placeholder="add a comment" ng-model="note.tempComment">
                     </div>
                     <div>

@@ -26,21 +26,29 @@ exports.create = function(req, res) {
   var url = req.body.url;
   var tags = req.body.tags;
   var comments = req.body.comments;
-  var notebook = req.body.notebook;
-  
+  var notebook =  {
+        id: req.body.notebook._id,
+        name: req.body.notebook.name
+      };
+  var author = {
+        id: req.body.author._id,
+        name: req.body.author.name
+      };
 
   Note.create({
       name: name, 
       url: url, 
       tags: tags,
       comments: comments,
-      notebook: notebook
+      notebook: notebook,
+      author: author
       // notebook: notebook.name
     }, function(err, note) {
     if(err) { return handleError(res, err); }
     return res.json(201, note);
   });
 };
+//retrieves user
 
 // Updates an existing note in the DB.
 exports.update = function(req, res) {

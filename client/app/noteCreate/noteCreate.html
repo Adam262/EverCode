@@ -22,7 +22,7 @@
               <small>TAG</small>
               <input type='text' ng-model='note.tags' name='tag' class='form-control' placeholder="first tag">
           </div>
-          <div ng-controller = "DropdownCtrl" class = "form-group pull-right">
+          <div ng-controller = "DropdownCtrl" class = "form-group form-group-sm" id = "pleaseGetInLine">
               <small>NOTEBOOK</small>
               <select class="form-control" ng-model = 'note.notebook' ng-options = "notebook.name for notebook in notebooks" required>
                     <!--   <option>Javascript Fundamentals</option> 

@@ -27,6 +27,7 @@ angular.module('evercodeApp')
         success(function(data) {
           $cookieStore.put('token', data.token);
           currentUser = User.get();
+          
           deferred.resolve(data);
           return cb();
         }).
@@ -37,6 +38,7 @@ angular.module('evercodeApp')
         }.bind(this));
 
         return deferred.promise;
+
       },
 
       /**

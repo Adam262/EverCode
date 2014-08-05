@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('evercodeApp')
-  .controller('NoteCtrl', function ($scope, $http, socket) {
+  .controller('NoteCtrl', function ($scope, $http, socket, Auth) {
     $http.get('/api/notes/noteTest').success(function(message){
       $scope.message = message;
 
@@ -9,7 +9,9 @@ angular.module('evercodeApp')
       //get all notes
       $http.get('/api/notes').success(function(notes) {
         $scope.notes = notes;
+        $scope.currentUser = Auth.getCurrentUser();
         socket.syncUpdates('note', $scope.notes);
+        console.log("currentUser: ", $scope.currentUser);
       
       //get single note
       $scope.getSingleNote = function(note) {
@@ -46,11 +48,12 @@ angular.module('evercodeApp')
       [
         {name: "alpha", orderBy: 'name', btn: "primary", glyph: "sort-by-alphabet"},
         {name: "likes", orderBy: '-rating', btn: "danger", glyph: "thumbs-up"},
-        {name: "newest", orderBy: 'dateEdited', btn: "info", glyph: "calendar"},
+        {name: "newest", orderBy: '-dateEdited', btn: "info", glyph: "calendar"},
         {name: "favorites", orderBy: '-favorite', btn: "warning", glyph: "star"}
       ];
     $scope.setOrder = function(order) {
       $scope.order = order;
+
     }
     // $scope.searchButtons.forEach(function (el){
     //     return el.orderBy;
