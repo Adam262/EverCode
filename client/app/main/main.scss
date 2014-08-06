@@ -41,6 +41,15 @@ body{
     margin: 20px 0;
 }
 
+img {
+    border-radius: 100%;
+    
+}
+
+img:hover  {
+box-shadow: 10px 10px 5px #888888;
+}
+
 #pleaseGetInLine {
     width: 350px;
 }
@@ -51,6 +60,14 @@ body{
 ul, li {
     list-style-type: none;
     display: inline;
+}
+
+ul.profile, li {
+    list-style-type: none;
+    display: block;
+}
+#commentAuthor {
+    font-style: italic;
 }
 
 #banner {

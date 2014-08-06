@@ -29,12 +29,15 @@ exports.create = function(req, res) {
         id: req.body.author._id,
         name: req.body.author.name
       };
-
+  var btn = req.body.btn;
+  var link = req.body.link;
   Notebook.create({
   name: name,
   description: description,
   isPrivate: isPrivate,
-  author: author
+  author: author,
+  btn: btn,
+  link: link
   }, function(err, notebook) {
     if(err) { return handleError(res, err); }
     return res.json(201, notebook);

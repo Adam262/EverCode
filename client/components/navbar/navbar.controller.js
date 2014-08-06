@@ -5,7 +5,7 @@ angular.module('evercodeApp')
     $scope.menu = [
     {
       'title': 'note_ify',
-      'subtitle': 'catchy slogan', 
+      'subtitle': 'read, capture, share, rate', 
       'link': '/'
     }
     // , 

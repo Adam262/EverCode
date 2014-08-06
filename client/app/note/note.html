@@ -1,4 +1,5 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
+
 <!-- <div ng-include="'components/searchBar/searchBar.html'"></div> -->
 <br>
 <br>
@@ -21,7 +22,7 @@
 <!-- orderBy: {{button.orderBy}} -->
    
         <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6 animate" id = "contents">
-            <li>
+            <li id = "{{note._id}}">
                 <a><strong>{{note.name}}</strong>
                     <button class="btn btn-primary btn-xs" ng-click="showNote = !showNote">
                         <span class="glyphicon glyphicon-resize-full"></span>
@@ -56,10 +57,10 @@
 
                     <h4>LIKES:
                         <strong>{{note.rating}}</strong>
-                        <button class="btn btn-primary btn-xs" ng-disabled="!note.active" ng-click="voteUp(note)">
+                        <button class="btn btn-primary btn-xs" ng-click="voteUp(note)">
                             <span class="glyphicon glyphicon-plus"></span>
                         </button>
-                        <button class="btn btn-danger btn-xs" ng-disabled="note.active" ng-click="voteDown(note)">
+                        <button class="btn btn-danger btn-xs"  ng-click="voteDown(note)">
                             <span class="glyphicon glyphicon-minus"></span>
                         </button>
                     </h4>
@@ -77,7 +78,11 @@
                     <div>
                         <ul><h4>COMMENTS:</h4>
                             <li ng-repeat = "comment in note.comments">
-                                {{comment}}<br>
+                                <strong>{{comment.name}}</strong>
+                                <span ng-show = "comment.name">
+                                    <small id = "commentAuthor">by {{comment.authorName}}</small>
+                                </span>
+                                <br>
                             </li>
                         </ul>
                         <input type="text" placeholder="add a comment" ng-model="note.tempComment">
@@ -96,3 +101,6 @@
 
     </div>
 </div>
+<br>
+<br>
+<div ng-include="'components/dropdown/dropdown.html'"></div>

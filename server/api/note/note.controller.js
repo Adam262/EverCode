@@ -51,23 +51,51 @@ exports.create = function(req, res) {
 //retrieves user
 
 // Updates an existing note in the DB.
+// exports.update = function(req, res) {
+//   console.log("req.body: ", req.body);
+//   if(req.body._id) { delete req.body._id; }
+//   Note.findById(req.params.id, function (err, note) {
+//     console.log("noteFound: ", note);
+//     if (err) { return handleError(res, err); }
+//     if(!note) { return res.send(404); }
+//     var updated = _.merge(note, req.body);
+//     console.log("updatedPreMerge: ", updated);
+//     updated.markModified('tags');
+//     updated.markModified('comments');
+//     // updated.markModified('favorite');
+//     updated.save(function (err) {
+//       if (err) { return handleError(res, err); }
+//        console.log("updated:", updated)
+//       return res.json(200, note);
+
+//     });
+//   });
+// };
+
+
+// Updates an existing note in the DB.
 exports.update = function(req, res) {
   console.log("req.body: ", req.body);
   if(req.body._id) { delete req.body._id; }
-  Note.findById(req.params.id, function (err, note) {
-    if (err) { return handleError(res, err); }
-    if(!note) { return res.send(404); }
-    var updated = _.merge(note, req.body);
-    console.log("updated: ", updated);
-    updated.markModified('tags');
-    updated.markModified('comments');
-    updated.save(function (err) {
+  Note.update({_id: req.params.id}, req.body, function (err, modified, raw) {
+    Note.findById(req.params.id, function(err, note) {
+            console.log("noteFound: ", err, modified, raw,  note);
+          if (err) { return handleError(res, err); }
+          // if(!note) { return res.send(404); }
+          // var updated = _.merge(note, req.body);
+      // console.log("updatedPreMerge: ", updated);
+          // updated.markModified('tags');
+          // updated.markModified('comments');
+    // updated.markModified('favorite');
+          // updated.save(function (err) {
       if (err) { return handleError(res, err); }
-       console.log("note:", note)
+       // console.log("updated:", updated)
       return res.json(200, note);
 
     });
-  });
+    })
+
+  // });
 };
 
 // Deletes a note from the DB.

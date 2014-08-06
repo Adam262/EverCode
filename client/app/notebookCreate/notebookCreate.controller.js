@@ -25,9 +25,10 @@ angular.module('evercodeApp')
       }
       $scope.notebook.btn = getRandom(colors);
       $scope.notebook.link = "/" + $scope.notebook.name;
+      console.log("btn, link:",  $scope.notebook.btn,  $scope.notebook.link)
        
       $http.post('/api/notebooks', { name: $scope.notebook.name, description: $scope.notebook.description, isPrivate: $scope.notebook.isPrivate, author: $scope.currentUser, btn:$scope.notebook.btn, link:$scope.notebook.link}).success(function(){
-          $location.path('/main'); 
+          $location.path('/note'); 
       });
        console.log("noteForHTTPPost: ",$scope.notebook)
       $scope.notebook = {};

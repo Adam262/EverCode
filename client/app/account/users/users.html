@@ -1,12 +1,41 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div ng-include="'components/dropdown/dropdown.html'"></div>
 <br>
 <br>
 <div ng-controller="UsersCtrl">
-  <div ui-view>
-    <ul>
-      <li>{{currentUser|json}}</li>
-    </ul>
-
+  <div class = "jumbotron text-center">
+      <h2>{{currentUser.facebook.first_name|| currentUser.name}}</h2>
+          <a>
+              <img src="https://graph.facebook.com/{{currentUser.facebook.id}}/picture?type=large">
+          </a>
+      <h4><small>Member since: {{currentUser.dateJoined | date: 'medium' }}</small></h4>
   </div>
 </div>
+
+ <div class = "container">
+    <div class="row text-center">
+      <h4>My Notes</h4>
+          <ul class = "profile">
+            <li ng-repeat = "userNote in userNotes">
+                <a href = "/note#note._id"><strong>{{userNote.name}}</strong></a>
+                    <span ng-show="userNote.favorite" class="glyphicon glyphicon-star"></span>
+                    
+                    <span ng-show="userNote.rating" class="glyphicon glyphicon-thumbs-up">{{userNote.rating}}</span>
+                    
+                    <span class = "glyphicon glyphicon-book">{{userNote.notebook.name}}</span>
+                
+            </li> <br>
+          </ul>
+      <h4>My Notebooks</h4>
+          <ul>
+            <li ng-repeat = "userNotebook in userNotebooks">
+                <a href = "/note"><strong>{{userNotebook.name}}</strong></a>
+            </li> <br>
+          </ul>
+    </div>
+  </div>
+
+
+
+
+{{currentUser._id|json}}
+

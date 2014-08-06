@@ -1,11 +1,12 @@
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
-
+console.log(FacebookStrategy);
 exports.setup = function (User, config) {
   passport.use(new FacebookStrategy({
       clientID: config.facebook.clientID,
       clientSecret: config.facebook.clientSecret,
-      callbackURL: 'http://localhost:9000/auth/facebook/callback'
+      callbackURL: 'http://localhost:9000/auth/facebook/callback',
+      // profileURL: 'https://graph.facebook.com/me?fields=id,name,picture&type=album'
     },
     function(accessToken, refreshToken, profile, done) {
       User.findOne({
@@ -21,6 +22,7 @@ exports.setup = function (User, config) {
             email: profile.emails[0].value,
             role: 'user',
             username: profile.username,
+            picture: profile.picture,
             provider: 'facebook',
             facebook: profile._json
           });

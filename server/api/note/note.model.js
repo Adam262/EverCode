@@ -19,7 +19,7 @@ var NoteSchema = new Schema({
   author: {id: ObjectId, name: String},
   active: {type: Boolean, default: true},
   tags: [{type: String}],
-  comments: [{type: String}],
+  comments: [{name: String, authorId: ObjectId, authorName: String}],
   rating: {type: Number, default: 0},
   favorite: {type: Boolean, default: false} 
 

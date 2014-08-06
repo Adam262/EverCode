@@ -17,21 +17,24 @@
       </div>
     </div>
     <div class = "col-lg-2 col-md-2">
-         <a class="btn btn-primary pull-right" type="button" ng-href = "#" ng-click = 
+         <button class="btn btn-primary pull-right" type="button" ng-click = 
          "showNoteBookForm = !showNoteBookForm">
             Notebook   <span class="glyphicon glyphicon-plus"></span>
-          </a>
+          </button>
      </div>
+  </div>
  <!--     <div class = "col-lg-2 col-md-2">
           <a class="btn btn-danger pull-left" href = "/note">
             Notes   <span class="glyphicon glyphicon-file"></span>
           </a>
     </div> -->
-    <div ng-show = "showNoteBookForm" ng-controller="NotebookcreateCtrl">
+<div class = "row" ng-controller="NotebookcreateCtrl" ng-show = "showNoteBookForm">
+    <div class="col-lg-12">
         <center class = 'navbar note'>
-            <form class = "form-inline center-block" name = "noteBookCreateForm" ng-submit = "noteBookCreateForm.$valid && addNoteBook() && !showNoteBookForm" novalidate>
+          <h3>CREATE A NOTEBOOK</h3>
+            <form class = "form-inline center-block" name = "noteBookCreateForm" ng-submit = "noteBookCreateForm.$valid && addNoteBook()" novalidate>
                   <div class="form-group">
-                      <small>CREATE NOTEBOOK</small>
+                      <small>NAME</small>
                       <input type='text' ng-model='notebook.name' name='notebook.name' class='form-control' placeholder="notebook name" validation-no-special-chars="true" required>
                   </div>
                   <div class="form-group">
@@ -42,13 +45,13 @@
                       <small>MAKE PRIVATE</small>
                       <input type='checkbox' ng-model='notebook.isPrivate' name='notebook.private' class='form-control'>
                   </div>
-                  <button class='btn btn-primary' type='submit'>
+                  <button class='btn btn-primary' type='submit' ng-click = "!showNoteBookForm">
                       <span class="glyphicon glyphicon-send"></span>
                   </button>
               </form>
         </center>
     </div>
-  </div>
+    </div>
 </div>
 
 <!-- ng-include="'client/app/main/notebookCreate/notebookCreate.html'" -->
