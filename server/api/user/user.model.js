@@ -1,9 +1,10 @@
 'use strict';
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var crypto = require('crypto');
-var authTypes = ['github', 'twitter', 'facebook', 'google'];
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema,
+  crypto = require('crypto'),
+  authTypes = ['github', 'twitter', 'facebook', 'google'];
+var ObjectId = Schema.Types.ObjectId;
 
 var UserSchema = new Schema({
   name: String,
@@ -12,6 +13,7 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  favorites: [ObjectId],
   dateJoined: {type: Date, default: Date.now},
   hashedPassword: String,
   provider: String,

@@ -47,6 +47,22 @@ exports.show = function (req, res, next) {
   });
 };
 
+
+// Updates an existing user in the DB.
+exports.update = function(req, res) {
+  console.log("req.body: ", req.body);
+  if(req.body._id) { delete req.body._id; }
+  User.update({_id: req.params.id}, req.body, function (err, modified, raw) {
+    User.findById(req.params.id, function(err, note) {
+            console.log("userFound: ", err, modified, raw,  user);
+          if (err) { return handleError(res, err); }
+      if (err) { return handleError(res, err); }
+      return res.json(200, user);
+
+      });
+    })
+};
+
 /**
  * Deletes a user
  * restriction: 'admin'

@@ -92,7 +92,7 @@ exports.update = function(req, res) {
        // console.log("updated:", updated)
       return res.json(200, note);
 
-    });
+      });
     })
 
   // });

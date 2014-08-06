@@ -45,7 +45,7 @@ angular.module('evercodeApp')
         console.log("$http.put note: ", note);
       });
     };
-
+    //Rating vote up / down
     $scope.voteUp = function(note) {
         note.rating++;
         //note.active = !note.active;
@@ -84,7 +84,7 @@ angular.module('evercodeApp')
       return note.favorite?true:false; 
     };
 
-    });
+      });
     })
   });
 
