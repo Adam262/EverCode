@@ -6,7 +6,7 @@ exports.setup = function (User, config) {
   passport.use(new TwitterStrategy({
     consumerKey: config.twitter.clientID,
     consumerSecret: config.twitter.clientSecret,
-    callbackURL: 'http://127.0.0.1:9000/auth/twitter/callback'
+    callbackURL: config.twitter.callbackURL
   },
   function(token, tokenSecret, profile, done) {
     User.findOne({

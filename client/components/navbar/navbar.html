@@ -3,8 +3,8 @@
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
                 <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
-                    <a ng-href="{{item.link}}">{{item.title}}</a>
-                    <small>{{item.subtitle}}</small>
+                    <h3><a ng-href="{{item.link}}">{{item.title}}</a></h3>
+                    <!-- <small>{{item.subtitle}}</small> -->
                 </li>
                 <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}">
                     <a href="/admin">Admin</a>
@@ -24,10 +24,10 @@
                 </li>
 
                 <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
-                    <a href="/signup">Sign up</a>
+                    <a href="/signup">signup</a>
                 </li>
                 <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}">
-                    <a href="/login">Login</a>
+                    <a href="/login">login</a>
                 </li>
 
             <div class="pull-right">

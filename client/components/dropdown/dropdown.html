@@ -3,9 +3,9 @@
   <div class="row dropdown">
     <div class="col-lg-8 col-md-8">
       <div class="btn-group pull-left" ng-controller="DropdownCtrl">
-          <a class="btn btn-{{item.btn}} animateNB" type="button"ng-repeat="item in notebooks" ng-href = "{{item.link}}"ng-class="{active: isActive(item.link)}">
+          <a class="btn btn-{{item.btn}} animateNB" type="button"ng-repeat="item in notebooks" ng-href = "{{item.link}}"ng-class="{active: isActive(item.link)}" tooltip = "Author: {{item.author.name}}  Description: {{item.description}}">
             {{item.name}}
-            <!-- <span class="caret"></span> -->
+            
           </a>
          <!--  <div>
               <ul class="dropdown-menu" role="menu" >

@@ -22,7 +22,7 @@ angular.module('evercodeApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/l');
     };
 
     $scope.isActive = function(route) {

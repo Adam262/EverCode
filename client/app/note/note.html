@@ -10,6 +10,9 @@
 <div class = "row"> 
   <div class="row navbar-note">
       <div class="col-lg-12 col-md-12">
+        <div class="navbar note text-center">
+                <h3>NOTES</h3>
+            </div>
           <div class="btn-group pull-left">
             <a class="btn btn-{{button.btn}}" type="button" ng-repeat="button in searchButtons" ng-click="setOrder(button.orderBy)">
                 {{button.name}} 
@@ -103,4 +106,7 @@
 </div>
 <br>
 <br>
+ <div class="navbar note text-center">
+                <h3>NOTEBOOKS</h3>
+            </div>
 <div ng-include="'components/dropdown/dropdown.html'"></div>

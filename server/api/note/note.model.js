@@ -2,8 +2,8 @@
 
 var mongoose = require('mongoose');
 // console.log("NotebookSchema: ", mongoose.model('Notebook') )
-var  NotebookSchema = mongoose.model('Notebook'),
-    UserSchema = mongoose.model('User');
+var  NotebookSchema = mongoose.model('Notebook');
+    // UserSchema = mongoose.model('User');
      // console.log("UserSchema: ", UserSchema);
      var Schema = mongoose.Schema,
      ObjectId = Schema.Types.ObjectId;
