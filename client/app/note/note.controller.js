@@ -1,17 +1,16 @@
 'use strict';
 
 angular.module('evercodeApp')
-  .controller('NoteCtrl', function ($scope, $http, socket, Auth) {
-    $http.get('/api/notes/noteTest').success(function(message){
-      $scope.message = message;
+  .controller('NoteCtrl', function ($scope, $http, $rootScope, socket, Auth, noteFactory) {
+//Get all notes
+$rootScope.$watch("notes", function (newval, oldval){
+          $scope.notes = newval;
+      }) 
+      $scope.getNotes = noteFactory.getNotes();
 
-      $scope.notes = [];
-      //get all notes
-      $http.get('/api/notes').success(function(notes) {
-        $scope.notes = notes;
-        $scope.currentUser = Auth.getCurrentUser();
-        socket.syncUpdates('note', $scope.notes);
-        console.log("currentUser: ", $scope.currentUser);
+//Get current user
+  $scope.currentUser = Auth.getCurrentUser();
+  console.log("currentUser: ", $scope.currentUser);
       
       //get single note
       $scope.getSingleNote = function(note) {
@@ -85,6 +84,5 @@ angular.module('evercodeApp')
     };
 
       });
-    })
-  });
+  
 

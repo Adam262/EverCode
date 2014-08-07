@@ -58,6 +58,9 @@ text-align: left;
 
 .tooltip.top .tooltip-arrow{ border-top-color: #7F8C8D; } .tooltip.left .tooltip-arrow{ border-lef-color: #7F8C8D; } .tooltip.bottom .tooltip-arrow{ border-bottom-color: #7F8C8D; } .tooltip.right .tooltip-arrow{ border-right-color: #7F8C8D; } .tooltip-inner{ background-color:#7F8C8D; }
 
+a h6 {
+    white-space: pre-wrap;
+}
 
 ul, li {
     list-style-type: none;

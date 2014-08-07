@@ -3,11 +3,13 @@
 <!-- <div ng-include="'components/searchBar/searchBar.html'"></div> -->
 <br>
 <br>
-<div ng-include="'app/noteCreate/noteCreate.html'"></div>
 
 
-<div class="container" id = "meny" ng-controller="NoteCtrl">  
-<div class = "row"> 
+<div ng-controller="NoteCtrl">  
+<div ng-show = "noteCreateBar">
+        <div ng-include="'app/noteCreate/noteCreate.html'"></div>
+</div>
+<div class = "container"> 
   <div class="row navbar-note">
       <div class="col-lg-12 col-md-12">
         <div class="navbar note text-center">
@@ -18,9 +20,13 @@
                 {{button.name}} 
           <span class="glyphicon glyphicon-{{button.glyph}}"> </span>
             </a>
-      </div>
-          <input id="search" ng-model="filterTerm" placeholder="search notes">
-    </div>
+                </div>
+                    <input id="search" ng-model="filterTerm" placeholder="search notes">
+                     <button class="btn btn-primary pull-right" type="button" ng-click = 
+                                "noteCreateBar = !noteCreateBar">
+                            Note   <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </div> 
   </div>
 <!-- orderBy: {{button.orderBy}} -->
    
@@ -48,7 +54,7 @@
                 <form name='noteEditForm' novalidate>
                     <h3 class="text-center">{{note.name}}</h3>
                     <a href="{{note.url}}" class="text-center">
-                        <h2>{{note.url}}</h2>
+                        <h6>{{note.url}}</h4>
                     </a>
                     <p class='text-center'>AUTHOR: {{note.author.name}}</p>
                     <p class='text-center'>{{note.description}}</p>

@@ -5,10 +5,10 @@
       <form class = "form-inline center-block" name = "noteCreateForm" ng-submit = "noteCreateForm.$valid && addNote()" novalidate>
           <div class="form-group">
               <small>NAME</small>
-              <input type='text' ng-model='note.name' name='note name' class='form-control' placeholder="note name" ng-maxlength="15" required>
+              <input type='text' ng-model='note.name' name='note name' class='form-control' placeholder="note name" ng-maxlength="20" required>
           </div>
               <span class="error" ng-show="noteCreateForm.name.$error.maxlength">
-                  Please limit name to 15 characters!
+                  Please limit name to 20n characters!
               </span>
           <div class="form-group">
               <small>URL</small>
