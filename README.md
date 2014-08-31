@@ -8,7 +8,7 @@ note_ify is deployed on [Heroku](https://note-ify.herokuapp.com).
 ##CONTRIBUTOR##
 - [Adam Barcan](https://github.com/Adam262)
 
-##SCREENSHOTS / WEBCAST##
+##SCREENSHOTS##
 *Starting Page*
 ![note_ify landing page](etc/noteifyLanding.png)
 
@@ -32,14 +32,15 @@ note_ify is deployed on [Heroku](https://note-ify.herokuapp.com).
 + Twitter Bootstrap
 
 ##CHALLENGES##
-+ routing for content update. I had issues updating note tag and comment fields via PUT requests. My current solution works but is expensive in that it updates complete note object rather than simply updating edited fields
-+ I had a hard time getting the tile sorting library Isotope.js to work in Angular. I finally switched to ngAnimate directive given my short deadline.  
-+ Deploying to Heroku.   note_ify was my first deployment - I encountered a lot of conflicts regarding Angular versions and Node modules. 
++ routing for content update. I had issues updating note tag and comment fields via PUT requests. My current solution works but is expensive in that it updates complete note object rather than simply updating edited fields.
++ I had a hard time getting the tile sorting library Isotope.js to work in Angular. I finally switched to ngAnimate directive given my short deadline.
++ deploying to Heroku.   note_ify was my first deployment - I encountered a lot of dependencyconflicts in both Node and Angular. But learned a lot that will make my next deployment smoother!
 
 ##IMPROVEMENTS##
-+ add drag and drop functionality
-+ expand existing Facebook integration to allow sharing of notes and notebooks among Facebook friends
-+ integrate to other social media APIs to allow file sharing. 
++ add drag and drop functionality.
++ lock content delete to author only - this is quick. 
++ expand existing Facebook integration to allow sharing of notes and notebooks among Facebook friends.
++ integrate to other social media APIs to allow file sharing.
 
 
 
