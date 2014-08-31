@@ -5,52 +5,53 @@
 <br>
 
 
-<div ng-controller="NoteCtrl">  
-<div ng-show = "noteCreateBar">
+<div ng-controller="NoteCtrl">
+    <div ng-show="noteCreateBar">
         <div ng-include="'app/noteCreate/noteCreate.html'"></div>
-</div>
-<div class = "container"> 
-  <div class="row navbar-note">
-      <div class="col-lg-12 col-md-12">
-        <div class="navbar note text-center">
-                <h3>NOTES</h3>
-            </div>
-          <div class="btn-group pull-left">
-            <a class="btn btn-{{button.btn}}" type="button" ng-repeat="button in searchButtons" ng-click="setOrder(button.orderBy)">
+    </div>
+    <div class="container">
+        <div class="row navbar-note">
+            <div class="col-lg-12 col-md-12">
+                <div class="navbar note text-center">
+                    <h3>NOTES</h3>
+                </div>
+                <div class="btn-group pull-left">
+                    <a class="btn btn-{{button.btn}}" type="button" ng-repeat="button in searchButtons" ng-click="setOrder(button.orderBy)">
                 {{button.name}} 
           <span class="glyphicon glyphicon-{{button.glyph}}"> </span>
             </a>
                 </div>
-                    <input id="search" ng-model="filterTerm" placeholder="search notes">
-                     <button class="btn btn-primary pull-right" type="button" ng-click = 
-                                "noteCreateBar = !noteCreateBar">
-                            Note   <span class="glyphicon glyphicon-plus"></span>
-                    </button>
-                </div> 
-  </div>
-<!-- orderBy: {{button.orderBy}} -->
-   
-        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6 animate" id = "contents">
-            <li id = "{{note._id}}">
-                <a><strong>{{note.name}}</strong>
+                <input id="search" ng-model="filterTerm" placeholder="search notes">
+                <button class="btn btn-primary pull-right" type="button" ng-click="noteCreateBar = !noteCreateBar">
+                    Note
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </div>
+        </div>
+        <!-- orderBy: {{button.orderBy}} -->
+
+        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6 animate note" id="contents">
+            <li id="{{note._id}}">
+                <a>
+                    <strong>{{note.name}}</strong>
                     <button class="btn btn-primary btn-xs" ng-click="showNote = !showNote">
                         <span class="glyphicon glyphicon-resize-full"></span>
                     </button>
-                    
 
-                        <button class="btn btn-danger btn-xs" ng-click="deleteNote(note)">
-                            <span class="glyphicon glyphicon-remove"></span>
-                        </button>
-                    
+
+                    <button class="btn btn-danger btn-xs" ng-click="deleteNote(note)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+
                     <span ng-show="note.favorite" class="glyphicon glyphicon-star"></span>
-                    
+
                     <span ng-show="note.rating" class="glyphicon glyphicon-thumbs-up">{{note.rating}}</span>
-                    
-                    <span class = "pull-right glyphicon glyphicon-book">{{note.notebook.name}}</span>
+
+                    <span class="pull-right glyphicon glyphicon-book">{{note.notebook.name}}</span>
                 </a>
             </li>
 
-            <div class="col-md-12 thumbnail" ng-show="showNote">
+            <div class="col-md-12 thumbnail note" ng-show="showNote">
                 <form name='noteEditForm' novalidate>
                     <h3 class="text-center">{{note.name}}</h3>
                     <a href="{{note.url}}" class="text-center">
@@ -69,27 +70,32 @@
                         <button class="btn btn-primary btn-xs" ng-click="voteUp(note)">
                             <span class="glyphicon glyphicon-plus"></span>
                         </button>
-                        <button class="btn btn-danger btn-xs"  ng-click="voteDown(note)">
+                        <button class="btn btn-danger btn-xs" ng-click="voteDown(note)">
                             <span class="glyphicon glyphicon-minus"></span>
                         </button>
                     </h4>
 
                     <div>
-                        <ul><h4>TAGS:</h4>
-                            <li ng-repeat = "tag in note.tags">
-                                {{tag}}<br>
+                        <ul>
+                            <h4>TAGS:</h4>
+                            <li ng-repeat="tag in note.tags">
+                                {{tag}}
+                                <br>
                             </li>
                         </ul>
-                        
+
                         <input type="text" placeholder="add a tag" ng-model="note.tempTag">
                     </div>
 
                     <div>
-                        <ul><h4>COMMENTS:</h4>
-                            <li ng-repeat = "comment in note.comments">
+                        <ul>
+                            <h4>COMMENTS:</h4>
+                            <li ng-repeat="comment in note.comments">
                                 <strong>{{comment.name}}</strong>
-                                <span ng-show = "comment.name">
-                                    <small><em>by {{comment.authorName}}</em></small>
+                                <span ng-show="comment.name">
+                                    <small>
+                                        <em>by {{comment.authorName}}</em>
+                                    </small>
                                 </span>
                                 <br>
                             </li>
@@ -104,15 +110,14 @@
                     <span class="glyphicon glyphicon-send"></span>
                 </button>
                 </form>
-            </div>
-            <!-- shownote -->
+            </div> <!-- shownote -->
         </ul>
 
-    </div>
+    </div> <!-- container -->
+</div> <!-- controller -->
+<br>
+<br>
+<div class="navbar note text-center">
+    <h3>NOTEBOOKS</h3>
 </div>
-<br>
-<br>
- <div class="navbar note text-center">
-                <h3>NOTEBOOKS</h3>
-            </div>
 <div ng-include="'components/dropdown/dropdown.html'"></div>

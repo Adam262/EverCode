@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('evercodeApp')
-  .controller('NoteCtrl', function ($scope, $http, $rootScope, socket, Auth, noteFactory) {
+  .controller('NoteCtrl', function ($scope, $http, $rootScope, socket, Auth, noteFactory, noteBookFactory) {
 //Get all notes
 $rootScope.$watch("notes", function (newval, oldval){
           $scope.notes = newval;
@@ -66,23 +66,14 @@ $rootScope.$watch("notes", function (newval, oldval){
       $scope.order = order;
 
     }
+// get single notebook
+  // $rootScope.$watch('notebook', function (newval, oldval){
+  //         $scope.notebook = newval;
+  //     }) 
+  //     $scope.getSingleNotebook = noteBookFactory.getSingleNoteBook($scope.notebook);
 
-    $scope.setQuery = function(note) {
-      $scope.query = note.notebook;
-    }
-    // $scope.searchButtons.forEach(function (el){
-    //     return el.orderBy;
-    // })
+  //     });
 
-    // $scope.myOrder = $scope.searchButtons.forEach(function (el){
-    //     return el.orderBy;
-    // })
-      
-
-    $scope.isFav = function(note) {
-      return note.favorite?true:false; 
-    };
-
-      });
+    });
   
 
