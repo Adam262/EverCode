@@ -56,10 +56,10 @@
         </h4>
      
 
-        <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
-            <center>
+        <div collapse="isCollapsed" class="navbar-collapse collapse center-text center-block" id="navbar-main">
+            
             <ul class="nav nav-pills">
-                <li> <a href="/" class = "btn btn-small"><span class="glyphicon glyphicon-home"></span></a>
+                <li ng-show="isLoggedIn()"> <a href="/" class = "btn btn-small btn-info"><span class="glyphicon glyphicon-home"></span></a>
                 </li>
                  <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
                     <a href="/signup">signup</a>
@@ -68,14 +68,13 @@
                     <a href="/login">login</a>
                 </li>
                
-                <li ng-show="isLoggedIn()"><a class="btn btn-info btn-small" href="/users" ><span class="glyphicon glyphicon-user"></span></a>
+                <li ng-show="isLoggedIn()"><a class="btn btn-warning btn-small" href="/users" ><span class="glyphicon glyphicon-user"></span></a>
                 </li>
                  <li ng-show="isLoggedIn()"><a href="/note" class = "btn btn-primary btn-small"><span class="glyphicon glyphicon-file"></span></a>
                 </li>
-                   <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()" class = "btn btn-primary btn-small"><span class="glyphicon glyphicon-log-out"></span></a>
+                   <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()" class = "btn btn-danger btn-small"><span class="glyphicon glyphicon-log-out"></span></a>
                 </li>
             </ul>
-            </center>
         </div>
     </div>
 </nav>

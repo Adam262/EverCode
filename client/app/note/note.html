@@ -10,27 +10,25 @@
         <div ng-include="'app/noteCreate/noteCreate.html'"></div>
     </div>
     <div class="container">
-        <div class="row navbar-note">
-            <div class="col-lg-12 col-md-12">
-                <div class="navbar note text-center">
-                    <h3>NOTES</h3>
-                </div>
-                <div class="btn-group pull-left">
-                    <a class="btn btn-{{button.btn}}" type="button" ng-repeat="button in searchButtons" ng-click="setOrder(button.orderBy)">
+        <h3 class="text-center">NOTES</h3>
+        <div class="btn-group btns-filter pull-left">
+            <a class="btn btn-{{button.btn}}" type="button" ng-repeat="button in searchButtons" ng-click="setOrder(button.orderBy)">
                 {{button.name}} 
           <span class="glyphicon glyphicon-{{button.glyph}}"> </span>
             </a>
-                </div>
-                <input id="search" ng-model="filterTerm" placeholder="search notes">
-                <button class="btn btn-primary pull-right" type="button" ng-click="noteCreateBar = !noteCreateBar">
-                    Note
-                    <span class="glyphicon glyphicon-plus"></span>
-                </button>
-            </div>
         </div>
+
+        <div class="btns-search">
+            <input id="search" ng-model="filterTerm" placeholder="search notes">
+            <a class="btn btn-primary" type="button" ng-click="noteCreateBar = !noteCreateBar">
+                        Note
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+
         <!-- orderBy: {{button.orderBy}} -->
 
-        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav nav-tabs nav-stacked col-md-4 col-sm-6 animate note" id="contents">
+        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav  col-md-4 col-sm-6 animate note" id="contents">
             <li id="{{note._id}}">
                 <a>
                     <strong>{{note.name}}</strong>
@@ -38,10 +36,6 @@
                         <span class="glyphicon glyphicon-resize-full"></span>
                     </button>
 
-
-                    <button class="btn btn-danger btn-xs" ng-click="deleteNote(note)">
-                        <span class="glyphicon glyphicon-remove"></span>
-                    </button>
 
                     <span ng-show="note.favorite" class="glyphicon glyphicon-star"></span>
 
@@ -51,10 +45,10 @@
                 </a>
             </li>
 
-            <div class="col-md-12 thumbnail note" ng-show="showNote">
+            <div class="thumbnail note note-form" ng-show="showNote">
                 <form name='noteEditForm' novalidate>
                     <h3 class="text-center">{{note.name}}</h3>
-                    <a href="{{note.url}}" class="text-center">
+                    <a href="{{note.url}}" class="">
                         <h6>{{note.url}}</h4>
                     </a>
                     <p class='text-center'>AUTHOR: {{note.author.name}}</p>
@@ -106,15 +100,18 @@
                         <h4>LAST EDITED: {{note.dateEdited | date: 'medium'}}</h4>
                     </div>
                 </form>
+                <button class="btn btn-danger btn-block" ng-click="deleteNote(note)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
                 <button class='btn btn-primary btn-block' type='submit' ng-click="editNote(note)">
                     <span class="glyphicon glyphicon-send"></span>
                 </button>
                 </form>
-            </div> <!-- shownote -->
+            </div>
+            <!-- shownote -->
         </ul>
-
-    </div> <!-- container -->
-</div> <!-- controller -->
+    </div>
+</div>
 <br>
 <br>
 <div class="navbar note text-center">

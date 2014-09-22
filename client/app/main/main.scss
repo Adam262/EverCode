@@ -22,8 +22,8 @@
 
 .navbar a {
     font-size: 1.2em;
-    color: #333 !important;
-    background-color: #ccc !important;
+    // color: #333 !important;
+    // background-color: #ccc !important;
     border: 1px solid rgba(255,255,255,.75);
     cursor: pointer;
 }
@@ -47,22 +47,12 @@ margin-left: 5%;
 
 }
 
-// #pleaseGetInLine {
-//     width: 350px;
-// }
-
-// .dropdown {
-//     background-color: #cff7f2;
-// }
 
 // BODY
 .text-center {
 text-align: center;
 }
-// .note {
-//     width: auto;
-   
-// }
+
 
 .clear-right {
 clear:right;
@@ -71,6 +61,7 @@ clear:right;
 body{
     font-family: "Raleway", Helvetica, sans-serif;
 }
+
 .thing-form {
     margin: 20px 0;
 }
@@ -103,12 +94,20 @@ ul.profile, li {
     width: 100%;
 
 }
+
 .panel-body{
+     width: 100%;
     background-color: #1ABC9C;
     border-radius: 2%;
     margin: 2%;
 
 }
+// @media only screen and (min-width: 770px) {
+// #contents {
+//     border: 1px solid #ccc;
+//     margin: 1%;
+// }
+// }
 
 #banner {
     border-bottom: none;
@@ -121,14 +120,30 @@ ul.profile, li {
     letter-spacing: -1px;
 }
 
-.hero-unit {
+.btns-filter{
+    float:left;
+    clear:right;
     position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+    display: inline-block;
+
 }
+
+.btns-search{
+   
+}
+@media only screen and (max-width: 770px) {
+.note-form {
+    max-width: 50%;
+}
+}
+// .hero-unit {
+//     position: relative;
+//     padding: 30px 15px;
+//     color: #F5F5F5;
+//     text-align: center;
+//     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+//     background: #4393B9;
+// }
 ////IMG
 img {
     border-radius: 100%;
