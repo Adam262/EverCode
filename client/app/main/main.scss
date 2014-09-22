@@ -11,9 +11,38 @@
 .row.navbar-note {
     margin-bottom: 2%;
 }
-.navbar-text {
-    margin-top: 1%;
+// .navbar-text {
+//     margin-top: 1%;
+// }
+.navbar {
+    width: 100%;
+    position: fixed;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.8);
 }
+
+.navbar-nav> li > a{
+    padding-top: 10px !important;
+    color: #333 !important;
+}
+
+.navbar a {
+    font-size: 1.2em;
+    color: #333 !important;
+    background-color: #ccc !important;
+    border: 1px solid rgba(255,255,255,.75);
+    cursor: pointer;
+}
+.navbar a:hover{
+    border: 1px solid rgba(0,0,0,0.75);
+}
+
+#navbar-main {
+   text-align: center;
+
+}
+
+
 #search {
 
 border: groove 0.5em #ddd;  
