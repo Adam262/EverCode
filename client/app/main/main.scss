@@ -102,17 +102,29 @@ background: url("https://farm3.staticflickr.com/2942/15338275342_757080d6ea_b.jp
     opacity: 0.75;
     // background-color: rgba(150, 150, 150, 0.5);
     min-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     overflow: hidden;
+
+    @media only screen and (max-width: 770px) { 
+        min-height: 100%;
+   }
 
 }
 
 .panel-body{
-    width: 50%;
-    height: 50%;
+    max-width: 30%;
+    max-height: 40%;
     background-color: rgba (26, 188, 156, 0.5);
     border-radius: 50%;
     margin: 0 auto;
+
+   @media only screen and (max-width: 770px) { 
+    max-width: 50%;
+    max-height: 50%; 
+        h4 {
+            font-size: 0.8em;
+        }
+   }
 
 }
 // @media only screen and (min-width: 770px) {
