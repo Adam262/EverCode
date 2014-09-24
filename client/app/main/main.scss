@@ -43,7 +43,6 @@
 
 border: groove 0.5em #ddd;  
 border-radius: 0.5em;
-margin-left: 5%;
 
 }
 
@@ -89,25 +88,64 @@ ul.profile, li {
     list-style-type: none;
     display: block;
 }
-.panel {
-    background-color: #27AE60;
-    width: 100%;
+
+.container {
+  
+   width: 100%;
+    // overflow: hidden;
+}
+ .panel {
+background: url("https://farm3.staticflickr.com/2942/15338275342_757080d6ea_b.jpg") no-repeat center;
+
+
+    background-size: cover;
+    opacity: 0.75;
+    // background-color: rgba(150, 150, 150, 0.5);
+    min-width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
 
 }
 
 .panel-body{
-     width: 100%;
-    background-color: #1ABC9C;
-    border-radius: 2%;
-    margin: 2%;
+    width: 50%;
+    height: 50%;
+    background-color: rgba (26, 188, 156, 0.5);
+    border-radius: 50%;
+    margin: 0 auto;
 
 }
 // @media only screen and (min-width: 770px) {
 // #contents {
-//     border: 1px solid #ccc;
+//     border: 1px solid #ccc !important;
 //     margin: 1%;
 // }
 // }
+
+// #contents {
+//     border: 1px solid #ccc !important;
+//     // margin: 1%;
+// }
+
+.btn {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333 !important;
+    border: 1px solid rgba(255,255,255,.75);
+    cursor: pointer;
+
+    &:hover{
+    border: 1px solid rgba(0,0,0,0.75);
+    background-color: white;
+}
+}
+
+.well {
+    padding: 2%;
+    margin: 3%;
+    box-shadow: 3px 3px 3px grey;
+}
+
+
 
 #banner {
     border-bottom: none;
@@ -128,14 +166,30 @@ ul.profile, li {
 
 }
 
+.notebook {
+    margin-left: 3%;
+}
 .btns-search{
    
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 750px) {
+
 .note-form {
     max-width: 50%;
+    }
+
+  .panel-body> h3 {
+        font-size: 1.2em;
+    }
 }
+
+@media only screen and (max-width: 600px) {
+
+  h3 {
+        font-size: 0.7em;
+    }
 }
+
 // .hero-unit {
 //     position: relative;
 //     padding: 30px 15px;
@@ -176,4 +230,9 @@ img.grayscale.disabled {
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+    color: white !important;
+
+    a {
+         color: white !important;
+    }
 }

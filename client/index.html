@@ -29,8 +29,10 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-   
-    <div ui-view=""></div>
+     <div ng-include="'components/navbar/navbar.html'"></div>
+   <div class="container">
+    <div ui-view></div>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

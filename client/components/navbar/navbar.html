@@ -61,10 +61,10 @@
             <ul class="nav nav-pills">
                 <li ng-show="isLoggedIn()"> <a href="/" class = "btn btn-small btn-info"><span class="glyphicon glyphicon-home"></span></a>
                 </li>
-                 <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
+                 <li ng-hide="isLoggedIn()">
                     <a href="/signup">signup</a>
                 </li>
-                <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}">
+                <li ng-hide="isLoggedIn()">
                     <a href="/login">login</a>
                 </li>
                
@@ -72,7 +72,7 @@
                 </li>
                  <li ng-show="isLoggedIn()"><a href="/note" class = "btn btn-primary btn-small"><span class="glyphicon glyphicon-file"></span></a>
                 </li>
-                   <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()" class = "btn btn-danger btn-small"><span class="glyphicon glyphicon-log-out"></span></a>
+                   <li ng-show="isLoggedIn()"><a href="" ng-click="logout()" class = "btn btn-danger btn-small"><span class="glyphicon glyphicon-log-out"></span></a>
                 </li>
             </ul>
         </div>

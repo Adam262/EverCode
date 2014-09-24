@@ -1,7 +1,8 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-<br>
-<br>
-<div>
+<!-- <div ng-include="'components/navbar/navbar.html'"></div> -->
+<!-- <br>
+<br> -->
+<div ui-view>
+  <div>
   <div class = "jumbotron text-center">
       <h2>Hello {{currentUser.facebook.first_name|| currentUser.name}} !</h2>
           <span ng-if = "currentUser.provider == 'facebook'"> <img id = "fbPhoto" src="https://graph.facebook.com/{{currentUser.facebook.id}}/picture?type=large"></span>
@@ -31,6 +32,7 @@
           </ul>
     </div>
   </div>
+</div>
 
 
 

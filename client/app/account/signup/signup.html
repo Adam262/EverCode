@@ -1,11 +1,5 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>Sign up</h1>
-    </div>
-    <div class="col-sm-12">
+      <h2 class = "center-text">Sign up</h2>
       <form class="form" name="form" ng-submit="register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
@@ -54,17 +48,16 @@
           </p>
         </div>
 
-        <div>
-          <button class="btn btn-inverse btn-lg btn-login" type="submit">
-            Sign up
+       <center>
+          <button class="btn btn-inverse btn-lg btn-login btn-small" type="submit">
+            Submit
           </button>
-          <a class="btn btn-default btn-lg btn-register" href="/login">
-            Login
-          </a>
-        </div>
+          <br>
+          Already have an account? <a href="/login">Login</a>
+        </center>
 
         <hr>
-        <div>
+        <center>
           <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
             <i class="fa fa-facebook"></i> Connect with Facebook
           </a>
@@ -72,8 +65,5 @@
             <i class="fa fa-twitter"></i> Connect with Twitter
           </a> -->
         </div>
-      </form>
-    </div>
-  </div>
-  <hr>
-</div>
+      </center>
+   

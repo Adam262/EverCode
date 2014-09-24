@@ -59,8 +59,8 @@ $rootScope.$watch("notes", function (newval, oldval){
       [
         {name: "alpha", orderBy: 'name', btn: "primary", glyph: "sort-by-alphabet"},
         {name: "likes", orderBy: '-rating', btn: "danger", glyph: "thumbs-up"},
-        {name: "newest", orderBy: '-dateEdited', btn: "info", glyph: "calendar"},
-        {name: "favorites", orderBy: '-favorite', btn: "warning", glyph: "star"}
+        {name: "new", orderBy: '-dateEdited', btn: "info", glyph: "calendar"},
+        {name: "fav", orderBy: '-favorite', btn: "warning", glyph: "star"}
       ];
     $scope.setOrder = function(order) {
       $scope.order = order;

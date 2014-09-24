@@ -1,9 +1,8 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-
-<!-- <div ng-include="'components/searchBar/searchBar.html'"></div> -->
 <br>
 <br>
 
+<div ui-view>
+    
 
 <div ng-controller="NoteCtrl">
     <div ng-show="noteCreateBar">
@@ -28,7 +27,7 @@
 
         <!-- orderBy: {{button.orderBy}} -->
 
-        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav  col-md-4 col-sm-6 animate note" id="contents">
+        <ul ng-repeat="note in notes|orderBy:order|filter: filterTerm" isotope-container="isotope-container" class="nav  col-md-6 col-sm-6 animate note" id="contents">
             <li id="{{note._id}}">
                 <a>
                     <strong>{{note.name}}</strong>
@@ -41,7 +40,7 @@
 
                     <span ng-show="note.rating" class="glyphicon glyphicon-thumbs-up">{{note.rating}}</span>
 
-                    <span class="pull-right glyphicon glyphicon-book">{{note.notebook.name}}</span>
+                    <span class="notebook glyphicon glyphicon-book">{{note.notebook.name}}</span>
                 </a>
             </li>
 
@@ -118,3 +117,4 @@
     <h3>NOTEBOOKS</h3>
 </div>
 <div ng-include="'components/dropdown/dropdown.html'"></div>
+</div>

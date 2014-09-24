@@ -1,57 +1,27 @@
- <div ng-include="'components/navbar/navbar.html'"></div>
+<div ui-view>
+    <div class = "panel">
+        <div class="panel-body center-text">
 
-<div class="panel">
-    <div class = "panel-body">
-
-      <div class="well well-md well-info" tooltip="Make custom notes and notebooks. Or add to a friend's notebook." data-placement = "left">
-        <h3 class="glyphicon glyphicon-file">   SAVE CONTENT FROM AROUND THE WEB</h3>
-      </div>
-          <div class="well well-md well-success" tooltip="Pull the best resources from around the web into a custom curriculum on any topic.">
-            <h3 class="glyphicon glyphicon-book">   MAKE AND SHARE CUSTOM CURRICULA </h3>
-          </div>
-              <div class="well well-md well-warning" tooltip="See the impact of your notes and notebooks. Use built-in searches to find trending content. And hold a conversation with other users through comments.">
-                <h3 class="glyphicon glyphicon-thumbs-up">   LIKE, FAVORITE, TAG AND COMMENT </h3>
-              </div>
-                  <div class="well well-md well-info" tooltip="Just folow the signup link above to get started!">
-                    <h3> <img src="../../assets/images/facebook.png" height = 40 width = 40 class = "grayscale">    INTEGRATE WITH FACEBOOK  </h3>
-                  </div>
-
+            <div class="well well-md well-info" tooltip="Make custom notes and notebooks." data-placement="top">
+                <h3 class="glyphicon glyphicon-file">SAVE CONTENT FROM AROUND THE WEB</h3>
+            </div>
+            <div class="well well-md well-success" tooltip="Make a custom curriculum on any topic." data-placement="left">
+                <h3 class="glyphicon glyphicon-book">SHARE CUSTOM CURRICULA</h3>
+            </div>
+            <div class="well well-md well-warning" tooltip="Use built-in searches to find trending content.">
+                <h3 class="glyphicon glyphicon-thumbs-up">LIKE, FAVORITE, TAG AND COMMENT</h3>
+            </div>
+            <div class="well well-md well-info" tooltip="Signup above to get started!">
+                <h3>
+                    <img src="../../assets/images/facebook.png" height=20 width=20 class="grayscale">INTEGRATE WITH FACEBOOK</h3>
+            </div>
+        </div>
     </div>
-<!-- <header class="hero-unit" id="banner">
-  <div class="container">
-  </div>
-</header> -->
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header center-block clearfix">TRENDING </h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
+    <p class="footer">
+        <span class="glyphicon glyphicon-copyright-mark"></span>
+        <a href="https://github.com/Adam262">Adam Barcan</a>
+        2014
     </p>
-  </form>
-</div> -->
 
-    <footer class="panel-footer footer">
-      <div class="container">
-          <p>
-            <span class = "glyphicon glyphicon-copyright-mark"></span>
-             <a href="https://github.com/Adam262">Adam Barcan</a>
-             2014
-           </p>
-      </div>
-    </footer>
 </div>
-
-
