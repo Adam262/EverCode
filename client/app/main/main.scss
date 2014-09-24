@@ -172,6 +172,12 @@ background: url("https://farm3.staticflickr.com/2942/15338275342_757080d6ea_b.jp
 .btns-search{
    
 }
+
+form {
+    max-width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
 @media only screen and (max-width: 750px) {
 
 .note-form {
