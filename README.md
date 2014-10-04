@@ -12,6 +12,9 @@ note_ify is deployed on [Heroku](https://note-ify.herokuapp.com).
 *Starting Page*
 ![note_ify landing page](etc/noteifyLanding.png)
 
+*Mobile Responsive*
+![note_ify mobile interface](etc/noteifyResponsive.png)
+
 *Create or view notebooks containing notes*
 ![note_ify notes page](etc/noteifyNotes.png)
 
